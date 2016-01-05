@@ -253,7 +253,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   let s:base01   = '7f8c8d'
   let s:base00   = '95a5a6'
   let s:base0    = 'bdc3c7'
-  let s:base1    = 'E8ECED'
+  let s:base1    = 'C7CBCF'
   let s:base2    = 'ecf0f1'
   let s:base3    = 'f3f7f8'
   let s:cyan     = '16a085'
@@ -382,23 +382,26 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   " CSS/SCSS {{{
   call <SID>X('cssTagName',                 s:red,      'none',   'none')
   call <SID>X('cssAttrComma',               s:base1,    'none',   'none')
-  call <SID>X('cssBraces',                  s:base1,    'none',   'none')
+  call <SID>X('cssBraces',                  s:base0,    'none',   'none')
   call <SID>X('cssDimensionProp',           s:blue,     'none',   'none')
   hi link cssPositioningProp cssDimensionProp
   hi link cssFontProp cssDimensionProp
   hi link cssBackgroundProp cssDimensionProp
   hi link cssBoxProp cssDimensionProp
+  hi link cssTextProp cssDimensionProp
+  hi link cssUIProp cssDimensionProp
+  hi link cssBorderProp cssDimensionProp
   call <SID>X('cssPositioningAttr',         s:green,    'none',   'none')
   call <SID>X('cssCommonAttr',              s:green,    'none',   'none')
 
   call <SID>X('cssBorderAttr',              s:green,    'none',   'none')
   call <SID>X('cssURL',                     s:magenta,  'none',   'underline')
-  call <SID>X('cssColor',                   s:magenta,  'none',   'none')
-  call <SID>X('cssValueNumber',             s:magenta,  'none',   'none')
-  call <SID>X('cssBackgroundAttr',          s:magenta,  'none',   'none')
-  call <SID>X('cssTextAttr',                s:magenta,  'none',   'none')
-  call <SID>X('cssValueLength',             s:magenta,  'none',   'none')
-  call <SID>X('cssUnitDecorators',          s:magenta,  'none',   'none')
+  call <SID>X('cssColor',                   s:base1,  'none',   'none')
+  call <SID>X('cssValueNumber',             s:base1,  'none',   'none')
+  call <SID>X('cssBackgroundAttr',          s:base1,  'none',   'none')
+  call <SID>X('cssTextAttr',                s:base1,  'none',   'none')
+  call <SID>X('cssValueLength',             s:base1,  'none',   'none')
+  call <SID>X('cssUnitDecorators',          s:base1,  'none',   'none')
   call <SID>X('cssPseudoClassId',           s:magenta,  'none',   'none')
   call <SID>X('cssFunctionName',            s:green,    'none',   'none')
   call <SID>X('cssProp',                    s:orange,   'none',   'none')
@@ -410,7 +413,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   call <SID>X('scssInclude',                s:green,    'none',   'bold')
   call <SID>X('scssMixinName',              s:green,    'none',   'none')
   call <SID>X('scssMixinParams',            s:base2,    'none',   'none')
-  call <SID>X('scssSelectorName',           s:magenta,  'none',   'none')
+  call <SID>X('scssSelectorName',           s:red,  'none',   'none')
   call <SID>X('scssVariable',               s:blue,     'none',   'none')
   "}}}
   " HTML/XML {{{
@@ -467,6 +470,12 @@ call NERDTreeHighlightFile('gitignore', 'Gray',   'none', s:base1,  'none')
 
   call <SID>X('rubyArrayDelimiter',           s:base00,     'none',   'none')
   call <SID>X('rubySymbol',           s:red,     'none',   'none')
+  call <SID>X('rubyBlock',           s:base1,     'none',   'none')
+  call <SID>X('rubyDoBlock',           s:base1,     'none',   'none')
+  call <SID>X('rubyMethodBlock',           s:base1,     'none',   'none')
+  call <SID>X('rubyCurlyBlockDelimiter',           s:base1,     'none',   'none')
+  call <SID>X('rubyDefine',           s:blue,     'none',   'bold')
+  call <SID>X('rubyConditionalExpression',           s:base1,     'none',   'none')
 
   " }}}
   " vim syntax highlightling {{{

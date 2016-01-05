@@ -318,7 +318,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   call <SID>X('Comment',                    s:base00,   'none',   'italic')
   call <SID>X('Constant',                   s:green,    'none',   'none')
   call <SID>X('Identifier',                 s:blue,     'none',   'none')
-  call <SID>X('Function',                   s:base00,   'none',   'none')
+  call <SID>X('Function',                   s:blue,     'none',   'none')
   call <SID>X('Statement',                  s:green,    'none',   'none')
   call <SID>X('PreProc',                    s:orange,   'none',   'none')
   call <SID>X('Type',                       s:yellow1,  'none',   'none')

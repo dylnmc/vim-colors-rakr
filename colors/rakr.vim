@@ -255,7 +255,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   let s:base0    = 'bdc3c7'
   let s:base1    = 'C7CBCF'
   let s:base2    = 'ecf0f1'
-  let s:base3    = 'f3f7f8'
+  let s:base3    = 'f7fafb'
   let s:cyan     = '16a085'
   let s:cyan1    = '07c5ac'
   let s:green    = '2ecc71'
@@ -375,7 +375,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   call <SID>X('CursorColumn',               'none',     s:base02, 'none')
   call <SID>X('Cursor',                     'none',     s:base03, 'none')
   hi link lCursor Cursor
-  call <SID>X('CursorLineNr',               s:base3,    'none',   'bold')
+  call <SID>X('CursorLineNr',               s:red,     s:base00,   'bold')
   call <SID>X('MatchParen',                 s:yellow,   s:red,    'bold')
   
   " }}}
@@ -478,6 +478,9 @@ call NERDTreeHighlightFile('gitignore', 'Gray',   'none', s:base1,  'none')
   call <SID>X('rubyConditionalExpression',           s:base1,     'none',   'none')
 
   " }}}
+  " tmux {{{
+  " }}}
+  call <SID>X('tmuxCmds', s:base2, 'none', 'none')
   " vim syntax highlightling {{{
   call <SID>X('vimBracket',                 s:red1,     'none',   'none')
   call <SID>X('vimIsCommand',               s:blue,     'none',   'none')
@@ -488,7 +491,7 @@ call NERDTreeHighlightFile('gitignore', 'Gray',   'none', s:base1,  'none')
   call <SID>X('vimHiLink',                  s:blue,     'none',   'none')
   call <SID>X('vimHiGroup',                 s:blue,     'none',   'none')
   call <SID>X('vimHiLink',                  s:blue,     'none',   'none')
-  call <SID>X('vimOper',                    s:green1,   'none',   'none')
+  call <SID>X('vimOper',                    s:green,    'none',   'none')
   hi! link vimOperParen vimOper
   call <SID>X('vimSyncMtchOpt',             s:yellow,   'none',   'none')
   hi! link vimVar Identifier

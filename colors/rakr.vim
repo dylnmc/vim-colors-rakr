@@ -274,9 +274,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   let s:red1     = 'c0392b'
   "}}}
   " Invert colors if background is white {{{
-  let s:is_light=(&background == 'light')
-
-  if s:is_light
+  if &background ==# 'light'
     let s:temp03  = s:base03
     let s:temp02  = s:base02
     let s:temp01  = s:base01
@@ -437,31 +435,31 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   call <SID>X('NERDTreeClosable',           s:blue,     'none',   'none')
 
 " NERDTress File highlighting
-function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-  exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg=#'. a:guibg .' guifg=#'. a:guifg
-  exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-endfunction
+"function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+  "exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg=#'. a:guibg .' guifg=#'. a:guifg
+  "exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+"endfunction
 
-call NERDTreeHighlightFile('jade',      'green',  'none', s:green,  'none')
-call NERDTreeHighlightFile('md',        'blue',   'none', s:blue,   'none')
-call NERDTreeHighlightFile('markdown',  'blue',   'none', s:blue,   'none')
-call NERDTreeHighlightFile('config',    'yellow', 'none', s:yellow, 'none')
-call NERDTreeHighlightFile('conf',      'yellow', 'none', s:yellow, 'none')
-call NERDTreeHighlightFile('json',      'green',  'none', s:magenta,  'none')
-call NERDTreeHighlightFile('yml',      'green',  'none', s:magenta,  'none')
-call NERDTreeHighlightFile('xml',      'green',  'none', s:magenta,  'none')
-call NERDTreeHighlightFile('html',      'green',  'none', s:green,  'none')
-call NERDTreeHighlightFile('css',       'cyan',   'none', s:cyan1,   'none')
-call NERDTreeHighlightFile('sass',      'cyan',   'none', s:cyan,   'none')
-call NERDTreeHighlightFile('scss',      'cyan',   'none', s:cyan,   'none')
-call NERDTreeHighlightFile('coffee',    'Red',    'none', s:orange1,    'none')
-call NERDTreeHighlightFile('js',        'Red',    'none', s:orange,    'none')
-call NERDTreeHighlightFile('rb',        'Red',    'none', s:red,    'none')
-call NERDTreeHighlightFile('ru',        'Red',    'none', s:red1,    'none')
-call NERDTreeHighlightFile('ts',        'Blue',   'none', s:blue,   'none')
-call NERDTreeHighlightFile('ds_store',  'Gray',   'none', s:base1,  'none')
-call NERDTreeHighlightFile('gitconfig', 'black',  'none', s:base1,  'none')
-call NERDTreeHighlightFile('gitignore', 'Gray',   'none', s:base1,  'none')
+"call NERDTreeHighlightFile('jade',      'green',  'none', s:green,  'none')
+"call NERDTreeHighlightFile('md',        'blue',   'none', s:blue,   'none')
+"call NERDTreeHighlightFile('markdown',  'blue',   'none', s:blue,   'none')
+"call NERDTreeHighlightFile('config',    'yellow', 'none', s:yellow, 'none')
+"call NERDTreeHighlightFile('conf',      'yellow', 'none', s:yellow, 'none')
+"call NERDTreeHighlightFile('json',      'green',  'none', s:magenta,  'none')
+"call NERDTreeHighlightFile('yml',      'green',  'none', s:magenta,  'none')
+"call NERDTreeHighlightFile('xml',      'green',  'none', s:magenta,  'none')
+"call NERDTreeHighlightFile('html',      'green',  'none', s:green,  'none')
+"call NERDTreeHighlightFile('css',       'cyan',   'none', s:cyan1,   'none')
+"call NERDTreeHighlightFile('sass',      'cyan',   'none', s:cyan,   'none')
+"call NERDTreeHighlightFile('scss',      'cyan',   'none', s:cyan,   'none')
+"call NERDTreeHighlightFile('coffee',    'Red',    'none', s:orange1,    'none')
+"call NERDTreeHighlightFile('js',        'Red',    'none', s:orange,    'none')
+"call NERDTreeHighlightFile('rb',        'Red',    'none', s:red,    'none')
+"call NERDTreeHighlightFile('ru',        'Red',    'none', s:red1,    'none')
+"call NERDTreeHighlightFile('ts',        'Blue',   'none', s:blue,   'none')
+"call NERDTreeHighlightFile('ds_store',  'Gray',   'none', s:base1,  'none')
+"call NERDTreeHighlightFile('gitconfig', 'black',  'none', s:base1,  'none')
+"call NERDTreeHighlightFile('gitignore', 'Gray',   'none', s:base1,  'none')
 
 
 
@@ -482,6 +480,11 @@ call NERDTreeHighlightFile('gitignore', 'Gray',   'none', s:base1,  'none')
   " }}}
   call <SID>X('tmuxCmds', s:base2, 'none', 'none')
   " vim syntax highlightling {{{
+  call <SID>X('helpHyperTextJump',                 s:magenta,     'none',   'underline')
+  call <SID>X('helpURL',                 s:red,     'none',   'underline')
+  call <SID>X('helpExample',                 s:base1,     'none',   'none')
+  call <SID>X('helpHeadline',                 s:base3,     'none',   'bold')
+  call <SID>X('helpSectionDelim',                 s:base01,     'none',   'none')
   call <SID>X('vimBracket',                 s:red1,     'none',   'none')
   call <SID>X('vimIsCommand',               s:blue,     'none',   'none')
   call <SID>X('vimCommand',                 s:yellow,   'none',   'none')

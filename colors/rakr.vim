@@ -8,7 +8,9 @@ hi clear
 if exists('syntax_on')
   syntax reset
 endif
-
+if exists('g:colors_name')
+  unlet g:colors_name
+endif
 let g:colors_name = 'rakr'
 "}}}
 if has('gui_running') || &t_Co == 88 || &t_Co == 256
@@ -222,217 +224,310 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   endfun
   " }}}
   " solarized colors {{{
-  let s:base03   = '002b36'
-  let s:base02   = '073642'
-  let s:base01   = '586e75'
-  let s:base00   = '657b83'
-  let s:base0    = '839496'
-  let s:base1    = '93a1a1'
-  let s:base2    = 'eee8d5'
-  let s:base3    = 'fdf6e3'
-  let s:yellow   = 'b58900'
-  let s:orange   = 'cb4b16'
-  let s:red      = 'dc322f'
-  let s:magenta  = 'd33682'
-  let s:violet   = '6c71c4'
-  let s:blue     = '268bd2'
-  let s:cyan     = '2aa198'
-  let s:green    = '859900'
-  let s:yellow1  = 'b58900'
-  let s:orange1  = 'cb4b16'
-  let s:red1     = 'dc322f'
-  let s:magenta1 = 'd33682'
-  let s:violet1  = '6c71c4'
-  let s:blue1    = '268bd2'
-  let s:cyan1    = '2aa198'
-  let s:green1   = '859900'
+  let s:basel3   = '002b36'
+  let s:basel2   = '073642'
+  let s:basel1   = '586e75'
+  let s:basel0   = '657b83'
+  let s:based0    = '839496'
+  let s:based1    = '93a1a1'
+  let s:based2    = 'eee8d5'
+  let s:based3    = 'fdf6e3'
+  let s:yellowl1   = 'b58900'
+  let s:orangel1   = 'cb4b16'
+  let s:redl1      = 'dc322f'
+  let s:magental1  = 'd33682'
+  let s:violetl1   = '6c71c4'
+  let s:bluel1     = '268bd2'
+  let s:cyanl1     = '2aa198'
+  let s:greenl1    = '859900'
+  let s:yellowd1  = 'b58900'
+  let s:oranged1  = 'cb4b16'
+  let s:redd1     = 'dc322f'
+  let s:magentad1 = 'd33682'
+  let s:violetd1  = '6c71c4'
+  let s:blued1    = '268bd2'
+  let s:cyand1    = '2aa198'
+  let s:greend1   = '859900'
   "}}}
   " Flat colors {{{
-  let s:base03   = '212f3e'
-  let s:base02   = '34495e'
-  let s:base01   = '7f8c8d'
-  let s:base00   = '95a5a6'
-  let s:base0    = 'bdc3c7'
-  let s:base1    = 'C7CBCF'
-  let s:base2    = 'ecf0f1'
-  let s:base3    = 'f7fafb'
-  let s:cyan     = '16a085'
-  let s:cyan1    = '07c5ac'
-  let s:green    = '2ecc71'
-  let s:green1   = '27ae60'
-  let s:blue     = '3498db'
-  let s:blue1    = '2980b9'
-  let s:violet   = '8e44ad'
-  let s:violet1  = '9b59b6'
-  let s:yellow   = 'fec50a'
-  let s:yellow1  = 'FD9809'
-  let s:orange   = 'f39c12'
-  let s:orange1  = 'd35400'
-  let s:magenta  = '7A2B9D'
-  let s:magenta1 = 'c8438c'
-  let s:red      = 'e74c3c'
-  let s:red1     = 'c0392b'
+  let s:basel3   = '212f3e'
+  let s:basel2   = '34495e'
+  let s:basel1   = '7f8c8d'
+  let s:basel0   = '95a5a6'
+  let s:based0    = 'bdc3c7'
+  let s:based1    = 'C7CBCF'
+  let s:based2    = 'ecf0f1'
+  let s:based3    = 'f7f7f7'
+  let s:cyanl1     = '16a085'
+  let s:cyand1    = '07c5ac'
+  let s:greenl1    = '2ecc71'
+  let s:greend1   = '27ae60'
+  let s:bluel1     = '3498db'
+  let s:blued1    = '2980b9'
+  let s:violetl1   = '8e44ad'
+  let s:violetd1  = '9b59b6'
+  let s:yellowl1   = 'fec50a'
+  let s:yellowd1  = 'FD9809'
+  let s:orangel1   = 'f39c12'
+  let s:oranged1  = 'd35400'
+  let s:magental1  = '7A2B9D'
+  let s:magentad1 = 'c8438c'
+  let s:redl1      = 'e74c3c'
+  let s:redd1     = 'c0392b'
   "}}}
-  " Invert colors if background is white {{{
-  if &background ==# 'light'
-    let s:temp03  = s:base03
-    let s:temp02  = s:base02
-    let s:temp01  = s:base01
-    let s:temp00  = s:base00
-    let s:base03  = s:base3
-    let s:base02  = s:base2
-    let s:base01  = s:base1
-    let s:base00  = s:base0
-    let s:base0   = s:temp00
-    let s:base1   = s:temp01
-    let s:base2   = s:temp02
-    let s:base3   = s:temp03
+  " Oceanic Next {{{
+  let s:basel3   = '141e23'
+  let s:basel2   = '343d46'
+  let s:basel1   = '4f5b66'
+  let s:basel0   = '65737e'
+  let s:based0    = 'bdc3c7'
+  let s:based1    = 'C7CBCF'
+  let s:based2    = 'ecf0f1'
+  let s:based3    = 'f7f7f7'
+  let s:cyanl1     = '16a085'
+  let s:cyand1    = '07c5ac'
+  let s:greenl1    = '2ecc71'
+  let s:greend1   = '27ae60'
+  let s:bluel1     = '3498db'
+  let s:blued1    = '2980b9'
+  let s:violetl1   = '8e44ad'
+  let s:violetd1  = '9b59b6'
+  let s:yellowl1   = 'fec50a'
+  let s:yellowd1  = 'FD9809'
+  let s:orangel1   = 'f39c12'
+  let s:oranged1  = 'd35400'
+  let s:magental1  = '7A2B9D'
+  let s:magentad1 = 'c8438c'
+  let s:redl1      = 'e74c3c'
+  let s:redd1     = 'c0392b'
+  "}}}
+  " Flat contrast {{{
+  let s:based3    = '141e23'
+  let s:based2    = '242d36'
+  let s:based1    = '3f4b56'
+  let s:based0    = '55636e'
+  let s:basel0    = '6c7a89'
+  let s:basel1    = '95a5a6'
+  let s:basel2    = 'ececec'
+  let s:basel3    = 'ffffff'
+  let s:cyand1    = '16a085'
+  let s:cyanl1    = '07c5ac'
+  let s:greend1   = '019875'
+  let s:greenl1   = '2ecc71'
+  let s:bluel1    = '6bb9f0'
+  let s:blued1    = '446cb3'
+  let s:violetd1  = '8e44ad'
+  let s:violetl1  = '9b59b6'
+  let s:yellowl1  = 'f5d76e'
+  let s:yellowd1  = 'f89406'
+  let s:oranged1  = 'd35400'
+  let s:orangel1  = 'f39c12'
+  let s:magentad1 = '913d88'
+  let s:magental1 = 'c8438c'
+  let s:redd1     = 'cf000f'
+  let s:redl1     = 'e74c3c'
+  let s:pinkd1    = 'db0a5b'
+  let s:pinkl1    = 'f62459'
+  "}}}
+  " Invert colors if background is dark {{{
+  if &background ==# 'dark'
+    let s:temp03  = s:basel3
+    let s:temp02  = s:basel2
+    let s:temp01  = s:basel1
+    let s:temp00  = s:basel0
+    let s:basel3  = s:based3
+    let s:basel2  = s:based2
+    let s:basel1  = s:based1
+    let s:basel0  = s:based0
+    let s:based0   = s:temp00
+    let s:based1   = s:temp01
+    let s:based2   = s:temp02
+    let s:based3   = s:temp03
 
-    let s:temp    = s:cyan
-    let s:cyan    = s:cyan1
-    let s:cyan1   = s:temp
-    let s:temp    = s:green
-    let s:green   = s:green1
-    let s:green1  = s:temp
-    let s:temp    = s:blue
-    let s:blue    = s:blue1
-    let s:blue1   = s:temp
-    let s:temp    = s:violet
-    let s:violet  = s:violet1
-    let s:violet1 = s:temp
-    let s:temp    = s:yellow
-    let s:yellow  = s:yellow1
-    let s:yellow1 = s:temp
-    let s:temp    = s:orange
-    let s:orange  = s:orange1
-    let s:orange1 = s:temp
-    let s:temp    = s:red
-    let s:red     = s:red1
-    let s:red1    = s:temp
+    let s:temp    = s:cyanl1
+    let s:cyanl1    = s:cyand1
+    let s:cyand1   = s:temp
+    let s:temp    = s:greenl1
+    let s:greenl1   = s:greend1
+    let s:greend1  = s:temp
+    let s:temp    = s:bluel1
+    let s:bluel1    = s:blued1
+    let s:blued1   = s:temp
+    let s:temp    = s:violetl1
+    let s:violetl1  = s:violetd1
+    let s:violetd1 = s:temp
+    let s:temp    = s:yellowl1
+    let s:yellowl1  = s:yellowd1
+    let s:yellowd1 = s:temp
+    let s:temp    = s:orangel1
+    let s:orangel1  = s:oranged1
+    let s:oranged1 = s:temp
+    let s:temp    = s:redl1
+    let s:redl1     = s:redd1
+    let s:redd1    = s:temp
+    let s:temp    = s:pinkl1
+    let s:pinkl1     = s:pinkd1
+    let s:pinkd1    = s:temp
   endif
   "}}}
   " Default Colors {{{
-  call <SID>X('Normal',                     s:base3,    s:base03, 'none')
-  call <SID>X('Comment',                    s:base00,   'none',   'italic')
-  call <SID>X('Constant',                   s:green,    'none',   'none')
-  call <SID>X('Identifier',                 s:blue,     'none',   'none')
-  call <SID>X('Function',                   s:blue,     'none',   'none')
-  call <SID>X('Statement',                  s:green,    'none',   'none')
-  call <SID>X('PreProc',                    s:orange,   'none',   'none')
-  call <SID>X('Type',                       s:yellow1,  'none',   'none')
-  call <SID>X('Special',                    s:red,      'none',   'none')
-  call <SID>X('Underlined',                 s:violet,   'none',   'underline')
+  call <SID>X('Normal',                     s:based1,    s:basel3, 'none')
+  call <SID>X('Comment',                    s:basel0,   'none',   'italic')
+  call <SID>X('Constant',                   s:redd1,   'none',   'none')
+  call <SID>X('Identifier',                 s:blued1,     'none',   'none')
+  call <SID>X('Function',                   s:blued1,     'none',   'none')
+  call <SID>X('Statement',                  s:greend1,    'none',   'none')
+  call <SID>X('PreProc',                    s:oranged1,   'none',   'none')
+  call <SID>X('Type',                       s:magental1, 'none',   'none')
+  call <SID>X('Special',                    s:redl1,      'none',   'none')
+  call <SID>X('Underlined',                 s:violetd1,   'none',   'underline')
   call <SID>X('Ignore',                     'none',     'none',   'none')
-  call <SID>X('Error',                      s:red,      'none',   'bold')
-  call <SID>X('Todo',                       s:magenta,  'none',   'bold')
+  call <SID>X('Error',                      s:yellowl1,      s:redd1,   'bold')
+  call <SID>X('Todo',                       s:magentad1,  'none',   'bold')
 
-  call <SID>X('SpecialKey',                 s:base00,   'none',   'reverse')
-  call <SID>X('NonText',                    s:base01,   s:base03, 'none')
+  call <SID>X('SpecialKey',                 s:based0,   'none',   'reverse')
+  call <SID>X('NonText',                    s:based1,   s:basel3, 'none')
 
-  " StatusLine
-  " StatusLineNC
+  call <SID>X('StatusLine',                 s:based0,    s:basel2, 'none')
+  call <SID>X('StatusLineNC',               s:basel1,   s:based2,  'none')
 
-  call <SID>X('Visual',                     s:blue,     s:base03, 'reverse')
-  call <SID>X('Directory',                  s:base1,     'none',   'bold')
-  call <SID>X('ErrorMsg',                   s:red,      'none',   'reverse')
-  call <SID>X('IncSearch',                  s:orange,   'none',   'reverse')
-  call <SID>X('Search',                     s:yellow,   'none',   'reverse')
-  call <SID>X('ModeMsg',                    s:blue,     'none',   'none')
-  call <SID>X('MoreMsg',                    s:blue,     'none',   'none')
-  call <SID>X('LineNr',                     s:base00,   s:base02, 'none')
-  call <SID>X('Question',                   s:cyan,     'none',   'bold')
+  call <SID>X('Visual',                     s:bluel1,     s:basel3, 'reverse')
+  call <SID>X('Directory',                  s:based1,     'none',   'bold')
+  call <SID>X('ErrorMsg',                   s:redd1,      'none',   'reverse')
+  call <SID>X('IncSearch',                  s:pinkd1,   'none',   'reverse')
+  call <SID>X('Search',                     s:yellowd1,   'none',   'reverse')
+  call <SID>X('ModeMsg',                    s:bluel1,     'none',   'none')
+  call <SID>X('MoreMsg',                    s:bluel1,     'none',   'none')
+  call <SID>X('LineNr',                     s:basel0,   s:basel2, 'none')
+  call <SID>X('Question',                   s:cyanl1,     'none',   'bold')
 
-  call <SID>X('Delimiter',                  s:red1,     'none',   'none')
+  call <SID>X('Delimiter',                  s:redd1,     'none',   'none')
 
-  call <SID>X('Title',                      s:red,      'none',   'bold')
-  call <SID>X('VertSplit',                  s:base00,   s:base00, 'none')
-  call <SID>X('WarningMsg',                 s:red,      'none',   'bold')
-  call <SID>X('WildMenu',                   s:base2,    s:base02, 'reverse,bold')
-  call <SID>X('Folded',                     s:base0,    s:base02, 'bold')
-  call <SID>X('FoldColumn',                 s:base0,    s:base02, 'none')
+  call <SID>X('Title',                      s:based3,     'none',   'bold')
+  call <SID>X('VertSplit',                  s:basel3,   s:basel2, 'none')
+  call <SID>X('WarningMsg',                 s:redl1,      'none',   'bold')
+  call <SID>X('WildMenu',                   s:based2,    s:basel2, 'reverse,bold')
+  call <SID>X('Folded',                     s:based0,    s:basel2, 'bold')
+  call <SID>X('FoldColumn',                 s:based0,    s:basel2, 'none')
 
-  call <SID>X('DiffAdd',                    s:green,    s:base02, 'bold')
-  call <SID>X('DiffChange',                 s:yellow,   s:base02, 'bold')
-  call <SID>X('DiffDelete',                 s:red,      s:base02, 'bold')
-  call <SID>X('DiffText',                   s:blue,     s:base02, 'bold')
+  call <SID>X('DiffAdd',                    s:greend1,    s:basel2, 'bold')
+  call <SID>X('DiffChange',                 s:yellowd1,   s:basel2, 'bold')
+  call <SID>X('DiffDelete',                 s:redd1,      s:basel2, 'bold')
+  call <SID>X('DiffText',                   s:blued1,     s:basel2, 'bold')
 
-  call <SID>X('SignColumn',                 s:base0,    'none',   'none')
-  call <SID>X('Conceal',                    s:blue,     'none',   'none')
-  call <SID>X('SpellBad',                   s:red,      'none',   'underline')
-  call <SID>X('SpellCap',                   s:violet,   'none',   'underline')
-  call <SID>X('SpellRare',                  s:cyan,     'none',   'underline')
-  call <SID>X('SpellLocal',                 s:yellow,   'none',   'underline')
-  call <SID>X('PMenu',                      s:base0,    s:base02, 'none')
-  call <SID>X('PMenuSel',                   s:base01,   s:base2,  'none')
-  call <SID>X('PMenuSbar',                  s:base2,    s:base0,  'none')
-  call <SID>X('PMenuThumb',                 s:base0,    s:base02, 'none')
-  call <SID>X('TabLine',                    s:base0,    s:base01, 'underline')
-  call <SID>X('TabLineFill',                s:base0,    s:base01, 'underline')
-  call <SID>X('TabLineSel',                 s:base01,   s:base2,  'underline')
-  call <SID>X('CursorLine',                 'none',     s:base02, 'none')
-  call <SID>X('CursorColumn',               'none',     s:base02, 'none')
-  call <SID>X('Cursor',                     'none',     s:base03, 'none')
+  call <SID>X('SignColumn',                 s:based0,    'none',   'none')
+  call <SID>X('Conceal',                    s:bluel1,     'none',   'none')
+  call <SID>X('SpellBad',                   s:redl1,      'none',   'underline')
+  call <SID>X('SpellCap',                   s:violetl1,   'none',   'underline')
+  call <SID>X('SpellRare',                  s:cyanl1,     'none',   'underline')
+  call <SID>X('SpellLocal',                 s:yellowl1,   'none',   'underline')
+  call <SID>X('PMenu',                      s:based0,    s:basel2, 'none')
+  call <SID>X('PMenuSel',                   s:basel1,   s:based2,  'none')
+  call <SID>X('PMenuSbar',                  s:based2,    s:based0,  'none')
+  call <SID>X('PMenuThumb',                 s:based0,    s:basel2, 'none')
+  call <SID>X('TabLine',                    s:based0,    s:basel1, 'underline')
+  call <SID>X('TabLineFill',                s:based0,    s:basel1, 'underline')
+  call <SID>X('TabLineSel',                 s:basel1,   s:based2,  'underline')
+  call <SID>X('CursorLine',                 'none',     s:basel2, 'none')
+  call <SID>X('CursorColumn',               'none',     s:basel2, 'none')
+  call <SID>X('Cursor',                     'none',     s:basel3, 'none')
   hi link lCursor Cursor
-  call <SID>X('CursorLineNr',               s:red,     s:base00,   'bold')
-  call <SID>X('MatchParen',                 s:yellow,   s:red,    'bold')
+  call <SID>X('CursorLineNr',               s:basel2,     s:basel0,   'bold')
+  call <SID>X('MatchParen',                 s:yellowl1,   s:redl1,    'bold')
   
   " }}}
   " CSS/SCSS {{{
-  call <SID>X('cssTagName',                 s:red,      'none',   'none')
-  call <SID>X('cssAttrComma',               s:base1,    'none',   'none')
-  call <SID>X('cssBraces',                  s:base0,    'none',   'none')
-  call <SID>X('cssDimensionProp',           s:blue,     'none',   'none')
-  hi link cssPositioningProp cssDimensionProp
-  hi link cssFontProp cssDimensionProp
-  hi link cssBackgroundProp cssDimensionProp
-  hi link cssBoxProp cssDimensionProp
-  hi link cssTextProp cssDimensionProp
-  hi link cssUIProp cssDimensionProp
-  hi link cssBorderProp cssDimensionProp
-  call <SID>X('cssPositioningAttr',         s:green,    'none',   'none')
-  call <SID>X('cssCommonAttr',              s:green,    'none',   'none')
+  call <SID>X('cssTagName',        s:blued1,    'none', 'bold')
+  call <SID>X('cssAttrComma',      s:based1,    'none', 'none')
+  call <SID>X('cssBraces',         s:based0,    'none', 'none')
+  call <SID>X('cssDimensionProp',  s:oranged1,  'none', 'none')
+  call <SID>X('cssProp',           s:oranged1,  'none', 'none')
+  call <SID>X('cssAttr',           s:pinkd1,    'none', 'none')
+  call <SID>X('cssURL',            s:magental1, 'none', 'underline')
+  call <SID>X('cssColor',          s:based1,    'none', 'none')
+  call <SID>X('cssValueNumber',    s:pinkd1,    'none', 'none')
+  call <SID>X('cssValueLength',    s:pinkd1,    'none', 'none')
+  call <SID>X('cssUnitDecorators', s:based1,    'none', 'none')
+  call <SID>X('cssPseudoClassId',  s:magental1, 'none', 'none')
+  call <SID>X('cssFunctionName',   s:greenl1,   'none', 'none')
+  call <SID>X('cssProp',           s:orangel1,  'none', 'none')
 
-  call <SID>X('cssBorderAttr',              s:green,    'none',   'none')
-  call <SID>X('cssURL',                     s:magenta,  'none',   'underline')
-  call <SID>X('cssColor',                   s:base1,  'none',   'none')
-  call <SID>X('cssValueNumber',             s:base1,  'none',   'none')
-  call <SID>X('cssBackgroundAttr',          s:base1,  'none',   'none')
-  call <SID>X('cssTextAttr',                s:base1,  'none',   'none')
-  call <SID>X('cssValueLength',             s:base1,  'none',   'none')
-  call <SID>X('cssUnitDecorators',          s:base1,  'none',   'none')
-  call <SID>X('cssPseudoClassId',           s:magenta,  'none',   'none')
-  call <SID>X('cssFunctionName',            s:green,    'none',   'none')
-  call <SID>X('cssProp',                    s:orange,   'none',   'none')
+  call <SID>X('sassClass',         s:greend1,   'none', 'bold')
+  call <SID>X('scssAmpersand',     s:greenl1,   'none', 'bold')
+  call <SID>X('scssAttribute',     s:based2,    'none', 'none')
+  call <SID>X('scssDefinition',    s:based2,    'none', 'none')
+  call <SID>X('sassFunction',      s:magentad1, 'none', 'none')
+  call <SID>X('scssFunction',      s:magentad1, 'none', 'none')
+  call <SID>X('sassFunctionName',  s:magentad1, 'none', 'none')
+  call <SID>X('scssFunctionName',  s:magentad1, 'none', 'none')
+  call <SID>X('sassInclude',       s:blued1,    'none', 'bold')
+  call <SID>X('scssInclude',       s:blued1,    'none', 'bold')
+  call <SID>X('sassMixinName',     s:greend1,   'none', 'none')
+  call <SID>X('scssMixinName',     s:greend1,   'none', 'none')
+  call <SID>X('scssMixinParams',   s:based2,    'none', 'none')
+  call <SID>X('scssSelectorName',  s:redl1,     'none', 'none')
+  call <SID>X('scssVariable',      s:cyand1,    'none', 'none')
+  "}}}
+  " JavaScript (Better with pangloss/vim-javascript plugin) {{{   
+  call <SID>X('jsStorageClass',         s:pinkd1,'none',   'bold')
+  call <SID>X('jsDocTags',                  s:basel0,   'none',   'bold')
+  call <SID>X('jsDocType',                  s:basel0,   'none',   'none')
+  call <SID>X('jsDocParam',           s:basel0,   'none',   'none')
+  call <SID>X('jsDocTypeNoParam',           s:basel0,   'none',   'none')
+  call <SID>X('jsFunction',               s:pinkd1, 'none',   'bold')
+  call <SID>X('jsFuncCall',               s:based0, 'none',   'bold')
+  call <SID>X('jsFuncBlock',               s:based0, 'none',   'bold')
+  call <SID>X('jsOperator',               s:blued1, 'none',   'none')
+  call <SID>X('jsFuncName',  s:based1, 'none',   'bold')
+  call <SID>X('jsBraces',  s:basel1, 'none',   'none')
+  call <SID>X('jsFuncBraces',  s:basel1, 'none',   'bold')
+  "}}}
+  " Elixir {{{   
+  call <SID>X('elixirArguments',            s:blued1, 'none',   'none')
+  call <SID>X('elixirAtom',                 s:pinkd1, 'none',   'none')
+  call <SID>X('elixirAlias',                s:based0, 'none',   'none')
+  call <SID>X('elixirBlockDefinition',      s:pinkd1,'none',   'bold')
+  call <SID>X('elixirComment',              s:basel0,   'none',   'italic')
+  call <SID>X('elixirDefine',               s:pinkd1, 'none',   'bold')
+  call <SID>X('elixirPrivateDefine',        s:pinkl1, 'none',   'bold')
+  call <SID>X('elixirDocString',            s:greenl1, 'none',   'none')
+  call <SID>X('elixirFunctionDeclaration',  s:based1, 'none',   'bold')
+  call <SID>X('elixirInclude',              s:greend1, 'none',   'bold')
+  call <SID>X('elixirId'   ,                s:based1, 'none',   'none')
+  call <SID>X('elixirOperator',             s:blued1, 'none',   'none')
+  call <SID>X('elixirModuleDefine',         s:pinkd1,'none',   'bold')
+  call <SID>X('elixirString',               s:redd1, 'none',   'none')
+  call <SID>X('elixirStringDelimiter',      s:redl1,'none',   'none')
+  call <SID>X('elixirVariable',             s:greend1, 'none',   'none')
 
-  call <SID>X('scssAmpersand',              s:green,    'none',   'bold')
-  call <SID>X('scssAttribute',              s:base2,    'none',   'none')
-  call <SID>X('scssDefinition',             s:base2,    'none',   'none')
-  call <SID>X('scssFunctionName',           s:magenta,  'none',   'none')
-  call <SID>X('scssInclude',                s:green,    'none',   'bold')
-  call <SID>X('scssMixinName',              s:green,    'none',   'none')
-  call <SID>X('scssMixinParams',            s:base2,    'none',   'none')
-  call <SID>X('scssSelectorName',           s:red,  'none',   'none')
-  call <SID>X('scssVariable',               s:blue,     'none',   'none')
+  call <SID>X('eelixirDelimiter',           s:magentad1, 'none',   'none')
   "}}}
   " HTML/XML {{{
-  call <SID>X('HTMLEndTag',                 s:blue1, 'none',   'bold')
-  call <SID>X('HTMLTag',                    s:blue1, 'none',   'bold')
-  call <SID>X('HTMLTagN',                   s:blue,     'none',   'bold')
-  call <SID>X('HTMLTagName',                s:blue,  'none',   'none')
-  hi link xmlTagName HTMLTagName
-  call <SID>X('HTMLArg',                    s:base01,    'none',   'none')
-  call <SID>X('HTMLLink',                   s:red,      'none',   'underline')
+  call <SID>X('HTMLEndTag',                 s:basel0, 'none',   'bold')
+  call <SID>X('HTMLTag',                    s:basel0, 'none',   'bold')
+  call <SID>X('HTMLTagN',                   s:basel0,     'none',   'bold')
+  call <SID>X('HTMLTagName',                s:based0,  'none',   'none')
+  call <SID>X('xmlTagName',                s:based0,  'none',   'none')
+  call <SID>X('HTMLArg',                    s:blued1,    'none',   'none')
+  call <SID>X('HTMLLink',                   s:based3,     'none',   'underline')
+  call <SID>X('HTMLString',                 s:pinkd1,     'none',   'none')
   "}}}
   " NERDTree {{{
-  call <SID>X('NERDTreeCWD',                s:blue,     'none',   'bold')
-  call <SID>X('NERDTreeFile',               s:base2,    'none',   'none')
-  call <SID>X('NERDTreeDirSlash',           s:orange,   'none',   'none')
-  call <SID>X('NERDTreeGitFlags',           s:base2,    'none',   'none')
-  call <SID>X('NERDTreeGitStatusDirDirty',  s:magenta,  'none',   'bold')
-  call <SID>X('NERDTreeGitStatusModified',  s:orange,   'none',   'bold')
-  call <SID>X('NERDTreeGitStatusUntracked', s:base2,    'none',   'bold')
-  call <SID>X('NERDTreeOpenable',           s:blue,     'none',   'none')
-  call <SID>X('NERDTreeClosable',           s:blue,     'none',   'none')
+  call <SID>X('NERDTreeCWD',                s:bluel1,     'none',   'bold')
+  call <SID>X('NERDTreeFile',               s:based2,     'none',   'none')
+  call <SID>X('NERDTreeDirSlash',           s:orangel1,   'none',   'none')
+  call <SID>X('NERDTreeGitFlags',           s:based2,     'none',   'none')
+  call <SID>X('NERDTreeGitStatusDirDirty',  s:magental1,  'none',   'bold')
+  call <SID>X('NERDTreeGitStatusModified',  s:orangel1,   'none',   'bold')
+  call <SID>X('NERDTreeGitStatusUntracked', s:based2,     'none',   'bold')
+  call <SID>X('NERDTreeOpenable',           s:bluel1,     'none',   'none')
+  call <SID>X('NERDTreeClosable',           s:bluel1,     'none',   'none')
+  call <SID>X('NERDTreeHelpTitle',          s:based2,     'none',   'bold')
+  call <SID>X('NERDTreeHelp',               s:based2,     'none',   'none')
+  call <SID>X('NERDTreeHelpCommand',        s:blued1,     'none',   'none')
+  call <SID>X('NERDTreeHelpKey',            s:redd1,      'none',   'bold')
+  call <SID>X('NERDTreeToggleOn',           s:greend1,    'none',   'bold')
+  call <SID>X('NERDTreeToggleOff',          s:redd1,     ' none',   'bold')
 
 " NERDTress File highlighting
 "function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -440,69 +535,79 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   "exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 "endfunction
 
-"call NERDTreeHighlightFile('jade',      'green',  'none', s:green,  'none')
-"call NERDTreeHighlightFile('md',        'blue',   'none', s:blue,   'none')
-"call NERDTreeHighlightFile('markdown',  'blue',   'none', s:blue,   'none')
-"call NERDTreeHighlightFile('config',    'yellow', 'none', s:yellow, 'none')
-"call NERDTreeHighlightFile('conf',      'yellow', 'none', s:yellow, 'none')
-"call NERDTreeHighlightFile('json',      'green',  'none', s:magenta,  'none')
-"call NERDTreeHighlightFile('yml',      'green',  'none', s:magenta,  'none')
-"call NERDTreeHighlightFile('xml',      'green',  'none', s:magenta,  'none')
-"call NERDTreeHighlightFile('html',      'green',  'none', s:green,  'none')
-"call NERDTreeHighlightFile('css',       'cyan',   'none', s:cyan1,   'none')
-"call NERDTreeHighlightFile('sass',      'cyan',   'none', s:cyan,   'none')
-"call NERDTreeHighlightFile('scss',      'cyan',   'none', s:cyan,   'none')
-"call NERDTreeHighlightFile('coffee',    'Red',    'none', s:orange1,    'none')
-"call NERDTreeHighlightFile('js',        'Red',    'none', s:orange,    'none')
-"call NERDTreeHighlightFile('rb',        'Red',    'none', s:red,    'none')
-"call NERDTreeHighlightFile('ru',        'Red',    'none', s:red1,    'none')
-"call NERDTreeHighlightFile('ts',        'Blue',   'none', s:blue,   'none')
-"call NERDTreeHighlightFile('ds_store',  'Gray',   'none', s:base1,  'none')
-"call NERDTreeHighlightFile('gitconfig', 'black',  'none', s:base1,  'none')
-"call NERDTreeHighlightFile('gitignore', 'Gray',   'none', s:base1,  'none')
+"call NERDTreeHighlightFile('jade',      'green',  'none', s:greenl1,  'none')
+"call NERDTreeHighlightFile('md',        'blue',   'none', s:bluel1,   'none')
+"call NERDTreeHighlightFile('markdown',  'blue',   'none', s:bluel1,   'none')
+"call NERDTreeHighlightFile('config',    'yellow', 'none', s:yellowl1, 'none')
+"call NERDTreeHighlightFile('conf',      'yellow', 'none', s:yellowl1, 'none')
+"call NERDTreeHighlightFile('json',      'green',  'none', s:magental1,  'none')
+"call NERDTreeHighlightFile('yml',      'green',  'none', s:magental1,  'none')
+"call NERDTreeHighlightFile('xml',      'green',  'none', s:magental1,  'none')
+"call NERDTreeHighlightFile('html',      'green',  'none', s:greenl1,  'none')
+"call NERDTreeHighlightFile('css',       'cyan',   'none', s:cyand1,   'none')
+"call NERDTreeHighlightFile('sass',      'cyan',   'none', s:cyanl1,   'none')
+"call NERDTreeHighlightFile('scss',      'cyan',   'none', s:cyanl1,   'none')
+"call NERDTreeHighlightFile('coffee',    'Red',    'none', s:oranged1,    'none')
+"call NERDTreeHighlightFile('js',        'Red',    'none', s:orangel1,    'none')
+"call NERDTreeHighlightFile('rb',        'Red',    'none', s:redl1,    'none')
+"call NERDTreeHighlightFile('ru',        'Red',    'none', s:redd1,    'none')
+"call NERDTreeHighlightFile('ts',        'Blue',   'none', s:bluel1,   'none')
+"call NERDTreeHighlightFile('ds_store',  'Gray',   'none', s:based1,  'none')
+"call NERDTreeHighlightFile('gitconfig', 'black',  'none', s:based1,  'none')
+"call NERDTreeHighlightFile('gitignore', 'Gray',   'none', s:based1,  'none')
 
 
 
   "}}}
   " Ruby highlighting {{{
 
-  call <SID>X('rubyArrayDelimiter',           s:base00,     'none',   'none')
-  call <SID>X('rubySymbol',           s:red,     'none',   'none')
-  call <SID>X('rubyBlock',           s:base1,     'none',   'none')
-  call <SID>X('rubyDoBlock',           s:base1,     'none',   'none')
-  call <SID>X('rubyMethodBlock',           s:base1,     'none',   'none')
-  call <SID>X('rubyCurlyBlockDelimiter',           s:base1,     'none',   'none')
-  call <SID>X('rubyDefine',           s:blue,     'none',   'bold')
-  call <SID>X('rubyConditionalExpression',           s:base1,     'none',   'none')
+  call <SID>X('rubyArrayDelimiter',        s:basel0,   'none', 'none')
+  call <SID>X('rubyBoolean',               s:violetd1, 'none', 'bold')
+  call <SID>X('rubySymbol',                s:pinkd1,   'none', 'none')
+  call <SID>X('rubyControl',               s:pinkd1,   'none', 'bold')
+  call <SID>X('rubyClass',               s:blued1,   'none', 'bold')
+  call <SID>X('rubyBlock',                 s:based1,   'none', 'none')
+  call <SID>X('rubyDoBlock',               s:based1,   'none', 'none')
+  call <SID>X('rubyMethodBlock',           s:based1,   'none', 'none')
+  call <SID>X('rubyCurlyBlockDelimiter',   s:based1,   'none', 'none')
+  call <SID>X('rubyDefine',                s:pinkd1,   'none', 'bold')
+  call <SID>X('rubyConditionalExpression', s:based1,   'none', 'none')
 
   " }}}
   " tmux {{{
+  call <SID>X('tmuxCmds', s:based2, 'none', 'none')
   " }}}
-  call <SID>X('tmuxCmds', s:base2, 'none', 'none')
+  " Plug {{{
+  call <SID>X('PlugName', s:based2, 'none', 'bold')
+  " }}}
   " vim syntax highlightling {{{
-  call <SID>X('helpHyperTextJump',                 s:magenta,     'none',   'underline')
-  call <SID>X('helpURL',                 s:red,     'none',   'underline')
-  call <SID>X('helpExample',                 s:base1,     'none',   'none')
-  call <SID>X('helpHeadline',                 s:base3,     'none',   'bold')
-  call <SID>X('helpSectionDelim',                 s:base01,     'none',   'none')
-  call <SID>X('vimBracket',                 s:red1,     'none',   'none')
-  call <SID>X('vimIsCommand',               s:blue,     'none',   'none')
-  call <SID>X('vimCommand',                 s:yellow,   'none',   'none')
-  call <SID>X('vimCommandSep',              s:blue,     'none',   'none')
-  call <SID>X('vimCommentString',           s:base01,   'none',   'underline,italic')
-  call <SID>X('vimGroup',                   s:blue,     'none',   'none')
-  call <SID>X('vimHiLink',                  s:blue,     'none',   'none')
-  call <SID>X('vimHiGroup',                 s:blue,     'none',   'none')
-  call <SID>X('vimHiLink',                  s:blue,     'none',   'none')
-  call <SID>X('vimOper',                    s:green,    'none',   'none')
-  hi! link vimOperParen vimOper
-  call <SID>X('vimSyncMtchOpt',             s:yellow,   'none',   'none')
-  hi! link vimVar Identifier
-  hi! link vimFunc Function
-  hi! link vimUserFunc Function
-  hi! link helpSpecial Special
-  hi! link vimSet Normal
-  hi! link vimSetEqual Normal
+  call <SID>X('helpHyperTextJump', s:magental1, 'none',   'underline')
+  call <SID>X('helpURL',           s:redl1,     'none',   'underline')
+  call <SID>X('helpExample',       s:based1,    'none',   'none')
+  call <SID>X('helpHeadline',      s:based3,    'none',   'bold')
+  call <SID>X('helpSectionDelim',  s:basel1,    'none',   'none')
+  call <SID>X('vimBracket',        s:redd1,     'none',   'none')
+  call <SID>X('vimIsCommand',      s:based2,    'none',   'none')
+  call <SID>X('vimCommand',        s:blued1,  'none',   'none')
+  call <SID>X('vimCommandSep',     s:blued1,    'none',   'none')
+  call <SID>X('vimCommentString',  s:basel1,    'none',   'underline,italic')
+  call <SID>X('vimGroup',          s:based1,    'none',   'none')
+  call <SID>X('vimHiLink',         s:based1,    'none',   'none')
+  call <SID>X('vimHiGroup',        s:based1,    'none',   'none')
+  call <SID>X('vimString',         s:greend1,   'none',   'none')
+  call <SID>X('vimOper',           s:greend1,   'none',   'none')
+  call <SID>X('vimOperParen',      s:greend1,   'none',   'none')
+  call <SID>X('vimSyncMtchOpt',    s:yellowd1,  'none',   'none')
+  call <SID>X('vimFuncVar',        s:blued1,    'none',   'none')
+  call <SID>X('vimVar',            s:blued1,    'none',   'none')
+  call <SID>X('vimEnvVar',         s:blued1,    'none',   'none')
+  call <SID>X('vimComment',        s:based0,    'none',   'italic')
+  call <SID>X('vimLineComment',    s:based0,    'none',   'italic')
+  call <SID>X('vimCommentTitke',   s:based0,    'none',   'bold,italic')
+  call <SID>X('vimFunc',           s:blued1,    'none',   'none')
+  call <SID>X('vimUserFunc',       s:blued1,    'none',   'none')
+  call <SID>X('vimSet',            s:based3,    s:basel3, 'none')
+  call <SID>X('vimSetEqual',       s:based3,    s:basel3, 'none')
   "}}}
 endif
 " delete functions {{{
